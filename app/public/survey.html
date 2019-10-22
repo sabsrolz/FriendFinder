@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    Survey
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <form>
+      <div id="name-label" class="form-group">
+        <label class="m-2 font-weight-bold" for="nameInput">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nameInput"
+          placeholder="Your name"
+        />
+      </div>
+      <div id="image-label" class="form-group">
+        <label class="m-2 font-weight-bold" for="imageInput">Image</label>
+        <input
+          type="text"
+          class="form-control"
+          id="imageInput"
+          placeholder=""
+        />
+      </div>
+      <div id="question1">
+        <label class="my-1 mr-2" for="question1Input">Question 1</label>
+        <select class="custom-select my-1 mr-sm-2" id="question1Input">
+          <option selected>Choose...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div id="question1">
+        <label class="my-1 mr-2" for="question1Input">Question 2</label>
+        <select class="custom-select my-1 mr-sm-2" id="question2Input">
+          <option selected>Choose...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div id="question1">
+        <label class="my-1 mr-2" for="question1Input">Question 3</label>
+        <select class="custom-select my-1 mr-sm-2" id="question3Input">
+          <option selected>Choose...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <button id="submit-button" type="submit" class="m-2 btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </body>
+</html>
