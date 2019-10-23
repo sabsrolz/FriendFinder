@@ -64,6 +64,28 @@
         Submit
       </button>
     </form>
-    <script src="friends.js"></script>
+    <script>
+      $("#submit-button").on("click", function(event) {
+        event.preventDefault();
+        let friendObject = {
+          name: $("#nameInput")
+            .val()
+            .trim(),
+          imageLink: $("#imageInput")
+            .val()
+            .trim(),
+          score: [
+            parseInt($("#question1Input").val()),
+            parseInt($("#question2Input").val()),
+            parseInt($("#question3Input").val())
+          ]
+        };
+        console.log(friendObject);
+        console.log(friendObject);
+        $.post("/api/friends", friendObject).then(function(data) {
+          console.log("friend added");
+        });
+      });
+    </script>
   </body>
 </html>

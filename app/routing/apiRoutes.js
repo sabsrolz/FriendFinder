@@ -1,14 +1,37 @@
-//A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
-//A POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
-let friends = [];
-app.get("/api/friends", function(req, res) {
-  console.log(res.json());
-});
+let friends = require("../data/friends");
+//let friends = [];
 
-app.post("/api/friends", function(req, res) {
-  let newFriend = req.body;
-  console.log(newFriend);
-  friends.push(newFriend);
-  res.json(friends);
-  //console.log(req.body);
-});
+module.exports = function(app) {
+  app.get("/api/friends", function(req, res) {
+    res.json(friends);
+  });
+
+  app.post("/api/friends", function(req, res) {
+    let newFriend = req.body;
+    let newFriendScore = req.body.score;
+    let currentFriendScore = [];
+    let difference = [];
+    let totalDifference = [];
+
+    console.log(newFriend);
+    friends.push(newFriend);
+    res.json(friends);
+    console.log(friends);
+    //console.log(req.body);
+
+    for (let friend = 0; friend < friends.length - 1; friend++) {
+      currentFriendScore = [];
+      currentFriendScore = friends[friend].score;
+      // console.log(currentFriendScore);
+      // console.log(newFriendScore);
+      for (let index = 0; index < currentFriendScore.length; index++) {
+        let diff = Math.abs(
+          parseInt(currentFriendScore[index]) - parseInt(newFriendScore[index])
+        );
+        difference.push(diff);
+        //console.log(diff);
+      }
+      console.log(difference);
+    }
+  });
+};
