@@ -1,11 +1,13 @@
 //import node packages
 const express = require("express");
 const path = require("path");
+let cors = require("cors");
 
 //set up express app
 let app = express();
-const PORT = process.env.PORT || 8080;
 
+const PORT = process.env.PORT || 8080;
+app.use(cors());
 //set up express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

@@ -1,4 +1,5 @@
 let friends = require("../data/friends");
+//let cors = require("cors");
 //let friends = [];
 
 module.exports = function(app) {
@@ -14,13 +15,12 @@ module.exports = function(app) {
     let totalDifference = [];
 
     console.log(newFriend);
-    friends.push(newFriend);
-    res.json(friends);
+    // friends.push(newFriend);
     console.log(friends);
     //console.log(req.body);
 
     for (let friend = 0; friend < friends.length - 1; friend++) {
-      currentFriendScore = [];
+      //currentFriendScore = [];
       currentFriendScore = friends[friend].score;
       // console.log(currentFriendScore);
       // console.log(newFriendScore);
@@ -32,6 +32,12 @@ module.exports = function(app) {
         //console.log(diff);
       }
       console.log(difference);
+      //add array of differences
+      //totalSums.push(sum)
     }
+    //find minimum
+
+    //res.json
+    //response is match
   });
 };

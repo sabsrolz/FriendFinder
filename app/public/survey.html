@@ -12,6 +12,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <form>
@@ -80,11 +81,19 @@
             parseInt($("#question3Input").val())
           ]
         };
-        console.log(friendObject);
-        console.log(friendObject);
-        $.post("/api/friends", friendObject).then(function(data) {
-          console.log("friend added");
-        });
+        // console.log(friendObject);
+        // console.log(friendObject);
+        // $.post("/api/friends", friendObject).then(function(data) {
+        //   console.log("friend added");
+        // });
+        axios
+          .post("/api/friends", friendObject)
+          .then(function(response) {
+            console.log(response);
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
       });
     </script>
   </body>
