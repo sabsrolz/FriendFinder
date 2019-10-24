@@ -42,7 +42,14 @@ module.exports = function(app) {
         currentFriendScore = [
           friends[friend].score1,
           friends[friend].score2,
-          friends[friend].score3
+          friends[friend].score3,
+          friends[friend].score4,
+          friends[friend].score5,
+          friends[friend].score6,
+          friends[friend].score7,
+          friends[friend].score8,
+          friends[friend].score9,
+          friends[friend].score10
         ];
         console.log("New friend score", newFriendScore);
         console.log("Current friend score", currentFriendScore);
@@ -76,11 +83,16 @@ module.exports = function(app) {
 
       res.json(bestMatch);
       connection.query(
-        `INSERT INTO friends (friend_name, image_url, score1, score2, score3) VALUES ("${
+        `INSERT INTO friends (friend_name, image_url, score1, score2, score3, score4, score5, score6, score7, score8, score9, score10) VALUES ("${
           newFriend.name
         }", "${newFriend.imageLink}", ${newFriend.score[0]}, ${
           newFriend.score[1]
-        }, ${newFriend.score[2]} );`,
+        }, ${newFriend.score[2]}, ${newFriend.score[3]}, ${
+          newFriend.score[4]
+        }, ${newFriend.score[5]}, ${newFriend.score[6]}, ${
+          newFriend.score[7]
+        }, ${newFriend.score[8]}, ${newFriend.score[9]}
+        );`,
         function(err, results) {
           if (err) throw err;
         }

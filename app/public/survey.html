@@ -34,7 +34,8 @@
         />
       </div>
       <div id="question1">
-        <label class="my-1 mr-2" for="question1Input">Question 1</label>
+        <p>Please select a rating for each question (1 = disagree, 2 = neutral, 3 = agree)</p>
+        <label class="my-1 mr-2" for="question1Input">Question 1: </br>Your mind is always buzzing with unexplored ideas and plans. </label>
         <select class="custom-select my-1 mr-sm-2" id="question1Input">
           <option selected>Choose...</option>
           <option value="1">1</option>
@@ -43,7 +44,7 @@
         </select>
       </div>
       <div id="question2">
-        <label class="my-1 mr-2" for="question1Input">Question 2</label>
+        <label class="my-1 mr-2" for="question2Input">Question 2: </br>Generally speaking, you rely more on your experience than your imagination.</label>
         <select class="custom-select my-1 mr-sm-2" id="question2Input">
           <option selected>Choose...</option>
           <option value="1">1</option>
@@ -52,7 +53,7 @@
         </select>
       </div>
       <div id="question3">
-        <label class="my-1 mr-2" for="question1Input">Question 3</label>
+        <label class="my-1 mr-2" for="question3Input">Question 3: </br>You find it easy to stay relaxed and focused even when there is some pressure.</label>
         <select class="custom-select my-1 mr-sm-2" id="question3Input">
           <option selected>Choose...</option>
           <option value="1">1</option>
@@ -60,6 +61,69 @@
           <option value="3">3</option>
         </select>
       </div>
+      <div id="question4">
+          <label class="my-1 mr-2" for="question4Input">Question 4: </br>You rarely do something just out of sheer curiosity.</label>
+          <select class="custom-select my-1 mr-sm-2" id="question4Input">
+            <option selected>Choose...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div id="question5">
+            <label class="my-1 mr-2" for="question5Input">Question 5: </br>People can rarely upset you.</label>
+            <select class="custom-select my-1 mr-sm-2" id="question5Input">
+              <option selected>Choose...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div id="question6">
+              <label class="my-1 mr-2" for="question6Input">Question 6: </br>It is often difficult for you to relate to other people’s feelings.</label>
+              <select class="custom-select my-1 mr-sm-2" id="question6Input">
+                <option selected>Choose...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div id="question7">
+                <label class="my-1 mr-2" for="question7Input">Question 7: </br>In a discussion, truth should be more important than people’s sensitivities.</label>
+                <select class="custom-select my-1 mr-sm-2" id="question7Input">
+                  <option selected>Choose...</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div id="question8">
+                  <label class="my-1 mr-2" for="question8Input">Question 8: </br>You rarely get carried away by fantasies and ideas.</label>
+                  <select class="custom-select my-1 mr-sm-2" id="question8Input">
+                    <option selected>Choose...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+                <div id="question9">
+                    <label class="my-1 mr-2" for="question9Input">Question 9: </br>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label>
+                    <select class="custom-select my-1 mr-sm-2" id="question9Input">
+                      <option selected>Choose...</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </div>
+                  <div id="question10">
+                      <label class="my-1 mr-2" for="question10Input">Question 10: </br>You feel more energetic after spending time with a group of people.</label>
+                      <select class="custom-select my-1 mr-sm-2" id="question10Input">
+                        <option selected>Choose...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    </div>
       <button id="submit-button" type="submit" class="m-2 btn btn-primary">
         Submit
       </button>
@@ -81,7 +145,14 @@
           score: [
             parseInt($("#question1Input").val()),
             parseInt($("#question2Input").val()),
-            parseInt($("#question3Input").val())
+            parseInt($("#question3Input").val()), 
+            parseInt($("#question4Input").val()), 
+            parseInt($("#question5Input").val()), 
+            parseInt($("#question6Input").val()), 
+            parseInt($("#question7Input").val()), 
+            parseInt($("#question8Input").val()), 
+            parseInt($("#question9Input").val()), 
+            parseInt($("#question10Input").val())
           ]
         };
         axios
