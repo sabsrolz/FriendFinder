@@ -7,6 +7,6 @@ module.exports = function(app) {
 
   //GET route to home page
   app.get("*", function(req, res) {
-    return res.sendFile(path.join(__dirname, "../public/index.html"));
+    return res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 };

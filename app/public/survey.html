@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title></title>
-    Survey
     <link
       rel="stylesheet"
       type="text/css"
@@ -15,7 +14,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <form>
+    <form id="question-form">
       <div id="name-label" class="form-group">
         <label class="m-2 font-weight-bold" for="nameInput">Name</label>
         <input
@@ -65,9 +64,13 @@
         Submit
       </button>
     </form>
+    <div id="match-result"></div>
     <script>
+      $("#match-result").hide();
       $("#submit-button").on("click", function(event) {
         event.preventDefault();
+        $("#match-result").show();
+
         let friendObject = {
           name: $("#nameInput")
             .val()
@@ -81,15 +84,14 @@
             parseInt($("#question3Input").val())
           ]
         };
-        // console.log(friendObject);
-        // console.log(friendObject);
-        // $.post("/api/friends", friendObject).then(function(data) {
-        //   console.log("friend added");
-        // });
         axios
           .post("/api/friends", friendObject)
           .then(function(response) {
-            console.log(response);
+            console.log(response.data.friend_name);
+            $("#question-form").hide();
+            $("#match-result").html(
+              `Your friend match is ${response.data.friend_name}`
+            );
           })
           .catch(function(error) {
             console.log(error);
