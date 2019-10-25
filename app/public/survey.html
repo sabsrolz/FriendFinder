@@ -198,6 +198,7 @@
     </form>
 
     <div id="match-result"></div>
+    <div id = "match-images"></div>
     <div class="text-center">
         <a href="home"
           >
@@ -214,10 +215,12 @@
     </footer>
     <script>
       $("#match-result").hide();
+      $("#match-images").hide();
       $("#submit-button").on("click", function(event) {
         event.preventDefault();
 
         $("#match-result").show();
+        $("#match-images").show();
         //imageLink will only contain a placeholder for this assignment
         let friendObject = {
           name: $("#nameInput")
@@ -246,9 +249,10 @@
             $("#question-form").hide();
             $("#instructions").hide();
             //$("#api-link").hide();
-            $("#match-result").html(
+            $("#match-result").replaceWith(
               `${friendObject.name}, Your friend match is ${response.data.friend_name}`
             );
+            $("#match-images").replaceWith(`<img class="img-thumbnail" src = ${friendObject.imageLink}><img class="img-thumbnail" src = ${response.data.imageLink}>`)
           })
           .catch(function(error) {
             console.log(error);
