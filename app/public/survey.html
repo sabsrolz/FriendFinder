@@ -198,6 +198,20 @@
     </form>
 
     <div id="match-result"></div>
+    <div class="text-center">
+        <a href="home"
+          >
+          
+          </a
+        >
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div id = "api-link" class="container">
+        <p><a href="/api/friends">API Friends Link</a> |</p>
+      </div>
+    </footer>
     <script>
       $("#match-result").hide();
       $("#submit-button").on("click", function(event) {
@@ -231,6 +245,7 @@
             console.log(response.data.friend_name);
             $("#question-form").hide();
             $("#instructions").hide();
+            $("#api-link").hide();
             $("#match-result").html(
               `${friendObject.name}, Your friend match is ${response.data.friend_name}`
             );
