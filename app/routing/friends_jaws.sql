@@ -1,21 +1,9 @@
 -- Drops the friends_db if it exists currently --
-DROP DATABASE IF EXISTS friends_db;
+DROP DATABASE IF EXISTS `xsp8cc702lvsgwvf`;
 -- Creates the "friends_db" database --
-CREATE DATABASE friends_db;
+CREATE DATABASE `xsp8cc702lvsgwvf`;
 
-USE friends_db;
-
-
-CREATE TABLE friends (
-friend_id INTEGER NOT NULL AUTO_INCREMENT, 
-friend_name VARCHAR(100) NOT NULL, 
-image_url VARCHAR(100) NOT NULL,
-score1 INTEGER(10) NOT NULL, 
-score2 INTEGER(10) NOT NULL,
-score3 INTEGER(10) NOT NULL,
-PRIMARY KEY (friend_id)
-);
-
+USE `xsp8cc702lvsgwvf`;
 
 SELECT * FROM friends;
 
@@ -35,4 +23,4 @@ ADD COLUMN score6 INTEGER(10) NOT NULL,
 ADD COLUMN score7 INTEGER(10) NOT NULL,
 ADD COLUMN score8 INTEGER(10) NOT NULL,
 ADD COLUMN score9 INTEGER(10) NOT NULL,
-ADD COLUMN score10 INTEGER(10) NOT NULL;
+ADD COLUMN score10 INTEGER(10) NOT NULL; 
