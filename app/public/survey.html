@@ -252,7 +252,8 @@
             $("#match-result").replaceWith(
               `${friendObject.name}, Your friend match is ${response.data.friend_name}`
             );
-            $("#match-images").replaceWith(`<img class="img-thumbnail" src = ${friendObject.imageLink}><img class="img-thumbnail" src = ${response.data.imageLink}>`)
+            //I tried adding the images to the output, but image link is too long for varchar type in sql
+            //$("#match-images").replaceWith(`<img class="img-thumbnail" src = ${friendObject.imageLink}><img class="img-thumbnail" src = ${response.data.imageLink}>`)
           })
           .catch(function(error) {
             console.log(error);
